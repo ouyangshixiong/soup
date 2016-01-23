@@ -1,0 +1,138 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myYaUserLabel">Create or edit a YaUser</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="yaUser.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="yaUser.name"
+                    required ng-minlength="6" ng-maxlength="20" />
+            <div ng-show="editForm.name.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.name.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.name.$error.minlength" translate-value-min="6">
+                    This field is required to be at least 6 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.name.$error.maxlength" translate-value-max="20">
+                    This field cannot be longer than 20 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_mobileNumber">MobileNumber</label>
+            <input type="text" class="form-control" name="mobileNumber" id="field_mobileNumber"
+                    ng-model="yaUser.mobileNumber"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_facebook">Facebook</label>
+            <input type="text" class="form-control" name="facebook" id="field_facebook"
+                    ng-model="yaUser.facebook"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_email">Email</label>
+            <input type="text" class="form-control" name="email" id="field_email"
+                    ng-model="yaUser.email"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_password">Password</label>
+            <input type="text" class="form-control" name="password" id="field_password"
+                    ng-model="yaUser.password"
+                    required />
+            <div ng-show="editForm.password.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.password.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_gender">Gender</label>
+            <select class="form-control" name="gender" ng-model="yaUser.gender" id="field_gender">
+                <option value="MALE">MALE</option>
+                <option value="FEMALE">FEMALE</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_loginStatus">LoginStatus</label>
+            <select class="form-control" name="loginStatus" ng-model="yaUser.loginStatus" id="field_loginStatus">
+                <option value="LOGINED">LOGINED</option>
+                <option value="NOTLOGIN">NOTLOGIN</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_hasPrivatePot">HasPrivatePot</label>
+            <input type="checkbox" class="form-control" name="hasPrivatePot" id="field_hasPrivatePot"
+                    ng-model="yaUser.hasPrivatePot"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_authToken">AuthToken</label>
+            <input type="text" class="form-control" name="authToken" id="field_authToken"
+                    ng-model="yaUser.authToken"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_authTokenUpdateTime">AuthTokenUpdateTime</label>
+            <input id="field_authTokenUpdateTime" type="text" class="form-control" uib-datepicker-popup="{{dateformat}}" ng-model="yaUser.authTokenUpdateTime" is-open="datePickerForAuthTokenUpdateTime.status.opened"
+            />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="datePickerForAuthTokenUpdateTimeOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_smUsedCount">SmUsedCount</label>
+            <input type="number" class="form-control" name="smUsedCount" id="field_smUsedCount"
+                    ng-model="yaUser.smUsedCount"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_smLastCheckDate">SmLastCheckDate</label>
+            <input id="field_smLastCheckDate" type="text" class="form-control" uib-datepicker-popup="{{dateformat}}" ng-model="yaUser.smLastCheckDate" is-open="datePickerForSmLastCheckDate.status.opened"
+            />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="datePickerForSmLastCheckDateOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_smLastContent">SmLastContent</label>
+            <input type="text" class="form-control" name="smLastContent" id="field_smLastContent"
+                    ng-model="yaUser.smLastContent"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_smExpireTime">SmExpireTime</label>
+            <input id="field_smExpireTime" type="text" class="form-control" uib-datepicker-popup="{{dateformat}}" ng-model="yaUser.smExpireTime" is-open="datePickerForSmExpireTime.status.opened"
+            />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="datePickerForSmExpireTimeOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

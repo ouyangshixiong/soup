@@ -1,0 +1,64 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myYaBannerLabel">Create or edit a YaBanner</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="yaBanner.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_bannerPictures">BannerPictures</label>
+            <input type="text" class="form-control" name="bannerPictures" id="field_bannerPictures"
+                    ng-model="yaBanner.bannerPictures"
+                    required />
+            <div ng-show="editForm.bannerPictures.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.bannerPictures.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_bannerName">BannerName</label>
+            <input type="text" class="form-control" name="bannerName" id="field_bannerName"
+                    ng-model="yaBanner.bannerName"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_updateDate">UpdateDate</label>
+            <input id="field_updateDate" type="text" class="form-control" uib-datepicker-popup="{{dateformat}}" ng-model="yaBanner.updateDate" is-open="datePickerForUpdateDate.status.opened"
+            />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="datePickerForUpdateDateOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label for="field_yaproduct">yaproduct</label>
+            <select class="form-control" id="field_yaproduct" name="yaproduct" ng-model="yaBanner.yaproduct" ng-options="yaProduct as yaProduct.id for yaProduct in yaproducts track by yaProduct.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_yacoupon">yacoupon</label>
+            <select class="form-control" id="field_yacoupon" name="yacoupon" ng-model="yaBanner.yacoupon" ng-options="yaCoupon as yaCoupon.id for yaCoupon in yacoupons track by yaCoupon.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

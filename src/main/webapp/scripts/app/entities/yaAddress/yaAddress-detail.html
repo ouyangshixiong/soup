@@ -1,0 +1,86 @@
+
+<div>
+    <h2><span>YaAddress</span> {{yaAddress.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span>ReceiverName</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaAddress.receiverName}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>ReceiverMobile</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaAddress.receiverMobile}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>ReceiverDistrict</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaAddress.receiverDistrict}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>ReceiverBuilding</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaAddress.receiverBuilding}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>ReceiverFloor</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaAddress.receiverFloor}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>ReceiverCompany</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaAddress.receiverCompany}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>IsDefault</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaAddress.isDefault}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>yauser</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="yaUser.detail({id:yaAddress.yauser.id})">{{yaAddress.yauser.id}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>

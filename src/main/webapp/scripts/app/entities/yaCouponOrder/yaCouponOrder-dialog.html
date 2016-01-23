@@ -1,0 +1,124 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myYaCouponOrderLabel">Create or edit a YaCouponOrder</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="yaCouponOrder.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_couponOrderId">CouponOrderId</label>
+            <input type="text" class="form-control" name="couponOrderId" id="field_couponOrderId"
+                    ng-model="yaCouponOrder.couponOrderId"
+                    required />
+            <div ng-show="editForm.couponOrderId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.couponOrderId.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_couponOrderDate">CouponOrderDate</label>
+            <input id="field_couponOrderDate" type="text" class="form-control" uib-datepicker-popup="{{dateformat}}" ng-model="yaCouponOrder.couponOrderDate" is-open="datePickerForCouponOrderDate.status.opened"
+            />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="datePickerForCouponOrderDateOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_couponExpireDate">CouponExpireDate</label>
+            <input id="field_couponExpireDate" type="text" class="form-control" uib-datepicker-popup="{{dateformat}}" ng-model="yaCouponOrder.couponExpireDate" is-open="datePickerForCouponExpireDate.status.opened"
+            />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="datePickerForCouponExpireDateOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_couponNeedPay">CouponNeedPay</label>
+            <input type="checkbox" class="form-control" name="couponNeedPay" id="field_couponNeedPay"
+                    ng-model="yaCouponOrder.couponNeedPay"
+                     />
+            <div ng-show="editForm.couponNeedPay.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.couponNeedPay.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_couponOrderPrice">CouponOrderPrice</label>
+            <input type="number" class="form-control" name="couponOrderPrice" id="field_couponOrderPrice"
+                    ng-model="yaCouponOrder.couponOrderPrice"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_couponOrderStatus">CouponOrderStatus</label>
+            <select class="form-control" name="couponOrderStatus" ng-model="yaCouponOrder.couponOrderStatus" id="field_couponOrderStatus" required>
+                <option value="ACTIVE">ACTIVE</option>
+                <option value="DISCARD">DISCARD</option>
+                <option value="LOCKED">LOCKED</option>
+                <option value="USED">USED</option>
+                <option value="EXPIRED">EXPIRED</option>
+            </select>
+            <div ng-show="editForm.couponOrderStatus.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.couponOrderStatus.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_orderStatusChangeTime">OrderStatusChangeTime</label>
+            <input type="number" class="form-control" name="orderStatusChangeTime" id="field_orderStatusChangeTime"
+                    ng-model="yaCouponOrder.orderStatusChangeTime"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_parentcouponOrderId">ParentcouponOrderId</label>
+            <input type="text" class="form-control" name="parentcouponOrderId" id="field_parentcouponOrderId"
+                    ng-model="yaCouponOrder.parentcouponOrderId"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_isParentCouponOrder">IsParentCouponOrder</label>
+            <input type="checkbox" class="form-control" name="isParentCouponOrder" id="field_isParentCouponOrder"
+                    ng-model="yaCouponOrder.isParentCouponOrder"
+                     />
+            <div ng-show="editForm.isParentCouponOrder.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.isParentCouponOrder.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="field_yauser">yauser</label>
+            <select class="form-control" id="field_yauser" name="yauser" ng-model="yaCouponOrder.yauser" ng-options="yaUser as yaUser.id for yaUser in yausers track by yaUser.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_yacoupon">yacoupon</label>
+            <select class="form-control" id="field_yacoupon" name="yacoupon" ng-model="yaCouponOrder.yacoupon" ng-options="yaCoupon as yaCoupon.id for yaCoupon in yacoupons track by yaCoupon.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,80 @@
+<div>
+    <h2>YaCouponOrders</h2>
+    <jh-alert></jh-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="yaCouponOrder.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span 
+                       >Create new YaCouponOrder
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>CouponOrderId</span></th>
+                    <th><span>CouponOrderDate</span></th>
+                    <th><span>CouponExpireDate</span></th>
+                    <th><span>CouponNeedPay</span></th>
+                    <th><span>CouponOrderPrice</span></th>
+                    <th><span>CouponOrderStatus</span></th>
+                    <th><span>OrderStatusChangeTime</span></th>
+                    <th><span>ParentcouponOrderId</span></th>
+                    <th><span>IsParentCouponOrder</span></th>
+                    <th><span>yauser</span></th>
+                    <th><span>yacoupon</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="yaCouponOrder in yaCouponOrders track by yaCouponOrder.id">
+                    <td><a ui-sref="yaCouponOrder.detail({id:yaCouponOrder.id})">{{yaCouponOrder.id}}</a></td>
+                    <td>{{yaCouponOrder.couponOrderId}}</td>
+                        <td>{{yaCouponOrder.couponOrderDate | date:'mediumDate'}}</td>
+                        <td>{{yaCouponOrder.couponExpireDate | date:'mediumDate'}}</td>
+                    <td>{{yaCouponOrder.couponNeedPay}}</td>
+                    <td>{{yaCouponOrder.couponOrderPrice}}</td>
+                    <td translate="{{'jhipsterLiquibaseBugApp.CouponOrderStatus.' + yaCouponOrder.couponOrderStatus}}">{{yaCouponOrder.couponOrderStatus}}</td>
+                    <td>{{yaCouponOrder.orderStatusChangeTime}}</td>
+                    <td>{{yaCouponOrder.parentcouponOrderId}}</td>
+                    <td>{{yaCouponOrder.isParentCouponOrder}}</td>
+                    <td>
+                        <a ui-sref="yaUser.detail({id:yaCouponOrder.yauser.id})">{{yaCouponOrder.yauser.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="yaCoupon.detail({id:yaCouponOrder.yacoupon.id})">{{yaCouponOrder.yacoupon.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="yaCouponOrder.detail({id:yaCouponOrder.id})"
+                                    class="btn btn-info btn-sm"> 
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="yaCouponOrder.edit({id:yaCouponOrder.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="yaCouponOrder.delete({id:yaCouponOrder.id})"
+                                    class="btn btn-danger btn-sm">                                    
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

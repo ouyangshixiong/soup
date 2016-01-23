@@ -1,0 +1,62 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "yauser",
+      "otherEntityName": "yaUser",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "receiverName",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "minlength",
+        "maxlength"
+      ],
+      "fieldValidateRulesMinlength": 6,
+      "fieldValidateRulesMaxlength": 20
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "receiverMobile",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "receiverDistrict",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "receiverBuilding",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "receiverFloor",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 6,
+      "fieldName": "receiverCompany",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 7,
+      "fieldName": "isDefault",
+      "fieldType": "Boolean",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "changelogDate": "20160123095151",
+  "dto": "no",
+  "pagination": "no",
+  "javadoc": "地区列表 楼名列表 下发   字段改为recieverLocation"
+}

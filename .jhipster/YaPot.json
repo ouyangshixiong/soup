@@ -1,0 +1,76 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "yauser",
+      "otherEntityName": "yaUser",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "yaorder",
+      "otherEntityName": "yaOrder",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "isPrivatePot",
+      "fieldType": "Boolean",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "potQrcode",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "potLabel",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "minlength",
+        "maxlength"
+      ],
+      "fieldValidateRulesMinlength": 4,
+      "fieldValidateRulesMaxlength": 20
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "potStatus",
+      "fieldType": "PotStatus",
+      "fieldValues": "CLEANED,NEEDCLEAN,DELIVERY,CUSTOMER,CUSTOMERLOST,CUSTOMERPAIED,LOST,BROKEN",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "potColor",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 6,
+      "fieldName": "potCapacity",
+      "javadoc": "容量（单位：ml）",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldId": 7,
+      "fieldName": "potBuyDate",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "changelogDate": "20160123095151",
+  "dto": "no",
+  "pagination": "no",
+  "javadoc": "壶"
+}

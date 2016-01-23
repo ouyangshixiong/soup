@@ -1,0 +1,12 @@
+jhipster_liquibase_bug-mysql:
+  container_name: jhipster_liquibase_bug-mysql
+  image: mysql:5.7.9
+  # volumes:
+  #   - ~/volumes/jhipster/jhipster_liquibase_bug/mysql/:/var/lib/mysql/
+  environment:
+    - MYSQL_USER=root
+    - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    - MYSQL_DATABASE=jhipster_liquibase_bug
+  ports:
+    - "3306:3306"
+  command: mysqld --lower_case_table_names=1

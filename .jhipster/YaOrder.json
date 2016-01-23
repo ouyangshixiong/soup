@@ -1,0 +1,162 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "yauser",
+      "otherEntityName": "yaUser",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "YaAddress",
+      "otherEntityName": "yaAddress",
+      "relationshipType": "one-to-one",
+      "otherEntityField": "id",
+      "ownerSide": true,
+      "otherEntityRelationshipName": "yaOrder"
+    },
+    {
+      "relationshipId": 3,
+      "relationshipName": "yaPot",
+      "otherEntityName": "yaPot",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "yaorder"
+    },
+    {
+      "relationshipId": 4,
+      "relationshipName": "YaCouponOrder",
+      "otherEntityName": "yaCouponOrder",
+      "relationshipType": "one-to-one",
+      "otherEntityField": "id",
+      "ownerSide": true,
+      "otherEntityRelationshipName": "yaOrder"
+    },
+    {
+      "relationshipId": 5,
+      "relationshipName": "yaproduct",
+      "otherEntityName": "yaProduct",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "orderId",
+      "javadoc": "订单逻辑id",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "useCoupon",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "orderDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "productAmount",
+      "javadoc": "冗余一份,订单used、lock产品数量",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "orderTotalPrice",
+      "fieldType": "Float",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 6,
+      "fieldName": "orderStatus",
+      "fieldType": "OrderStatus",
+      "fieldValues": "ACTIVE,DISCARD,PAID,EXPIRED",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 7,
+      "fieldName": "orderStatusChangeTime",
+      "fieldType": "Long"
+    },
+    {
+      "fieldId": 8,
+      "fieldName": "deliveryDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldId": 9,
+      "fieldName": "deliveryPeriod",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 10,
+      "fieldName": "deliveryManName",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "minlength",
+        "maxlength"
+      ],
+      "fieldValidateRulesMinlength": 2,
+      "fieldValidateRulesMaxlength": 20
+    },
+    {
+      "fieldId": 11,
+      "fieldName": "deliveryPhone",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 12,
+      "fieldName": "potReturnMethod",
+      "fieldType": "PotReturnMethod",
+      "fieldValues": "SELF,DELIVERYMAN"
+    },
+    {
+      "fieldId": 13,
+      "fieldName": "hasPrivatePot",
+      "javadoc": "是否有私人壶",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldId": 14,
+      "fieldName": "usePrivatePot",
+      "javadoc": "是否使用私人壶",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldId": 15,
+      "fieldName": "parentOrderId",
+      "javadoc": "父订单逻辑id",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 16,
+      "fieldName": "isParentOrder",
+      "fieldType": "Boolean",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 17,
+      "fieldName": "orderRealPrice",
+      "fieldType": "Float",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "changelogDate": "20160123095151",
+  "dto": "no",
+  "pagination": "no",
+  "javadoc": "订单"
+}

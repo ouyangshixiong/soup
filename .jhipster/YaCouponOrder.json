@@ -1,0 +1,84 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "yauser",
+      "otherEntityName": "yaUser",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "yacoupon",
+      "otherEntityName": "yaCoupon",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "couponOrderId",
+      "javadoc": "买券逻辑id",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "couponOrderDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "couponExpireDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "couponNeedPay",
+      "javadoc": "系统送的不要付钱",
+      "fieldType": "Boolean",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "couponOrderPrice",
+      "fieldType": "Float"
+    },
+    {
+      "fieldId": 6,
+      "fieldName": "couponOrderStatus",
+      "fieldType": "CouponOrderStatus",
+      "fieldValues": "ACTIVE,DISCARD,LOCKED,USED,EXPIRED",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 7,
+      "fieldName": "orderStatusChangeTime",
+      "fieldType": "Long"
+    },
+    {
+      "fieldId": 8,
+      "fieldName": "parentcouponOrderId",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 9,
+      "fieldName": "isParentCouponOrder",
+      "fieldType": "Boolean",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "changelogDate": "20160123095151",
+  "dto": "no",
+  "pagination": "no",
+  "javadoc": "买券复用YaOrderSequence生成唯一couponOrderId"
+}

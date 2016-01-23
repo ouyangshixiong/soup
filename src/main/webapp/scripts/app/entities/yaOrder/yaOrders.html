@@ -1,0 +1,104 @@
+<div>
+    <h2>YaOrders</h2>
+    <jh-alert></jh-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="yaOrder.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span 
+                       >Create new YaOrder
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>OrderId</span></th>
+                    <th><span>UseCoupon</span></th>
+                    <th><span>OrderDate</span></th>
+                    <th><span>ProductAmount</span></th>
+                    <th><span>OrderTotalPrice</span></th>
+                    <th><span>OrderStatus</span></th>
+                    <th><span>OrderStatusChangeTime</span></th>
+                    <th><span>DeliveryDate</span></th>
+                    <th><span>DeliveryPeriod</span></th>
+                    <th><span>DeliveryManName</span></th>
+                    <th><span>DeliveryPhone</span></th>
+                    <th><span>PotReturnMethod</span></th>
+                    <th><span>HasPrivatePot</span></th>
+                    <th><span>UsePrivatePot</span></th>
+                    <th><span>ParentOrderId</span></th>
+                    <th><span>IsParentOrder</span></th>
+                    <th><span>OrderRealPrice</span></th>
+                    <th><span>yauser</span></th>
+                    <th><span>YaAddress</span></th>
+                    <th><span>YaCouponOrder</span></th>
+                    <th><span>yaproduct</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="yaOrder in yaOrders track by yaOrder.id">
+                    <td><a ui-sref="yaOrder.detail({id:yaOrder.id})">{{yaOrder.id}}</a></td>
+                    <td>{{yaOrder.orderId}}</td>
+                    <td>{{yaOrder.useCoupon}}</td>
+                        <td>{{yaOrder.orderDate | date:'mediumDate'}}</td>
+                    <td>{{yaOrder.productAmount}}</td>
+                    <td>{{yaOrder.orderTotalPrice}}</td>
+                    <td translate="{{'jhipsterLiquibaseBugApp.OrderStatus.' + yaOrder.orderStatus}}">{{yaOrder.orderStatus}}</td>
+                    <td>{{yaOrder.orderStatusChangeTime}}</td>
+                        <td>{{yaOrder.deliveryDate | date:'mediumDate'}}</td>
+                    <td>{{yaOrder.deliveryPeriod}}</td>
+                    <td>{{yaOrder.deliveryManName}}</td>
+                    <td>{{yaOrder.deliveryPhone}}</td>
+                    <td translate="{{'jhipsterLiquibaseBugApp.PotReturnMethod.' + yaOrder.potReturnMethod}}">{{yaOrder.potReturnMethod}}</td>
+                    <td>{{yaOrder.hasPrivatePot}}</td>
+                    <td>{{yaOrder.usePrivatePot}}</td>
+                    <td>{{yaOrder.parentOrderId}}</td>
+                    <td>{{yaOrder.isParentOrder}}</td>
+                    <td>{{yaOrder.orderRealPrice}}</td>
+                    <td>
+                        <a ui-sref="yaUser.detail({id:yaOrder.yauser.id})">{{yaOrder.yauser.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="yaAddress.detail({id:yaOrder.yaAddress.id})">{{yaOrder.yaAddress.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="yaCouponOrder.detail({id:yaOrder.yaCouponOrder.id})">{{yaOrder.yaCouponOrder.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="yaProduct.detail({id:yaOrder.yaproduct.id})">{{yaOrder.yaproduct.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="yaOrder.detail({id:yaOrder.id})"
+                                    class="btn btn-info btn-sm"> 
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="yaOrder.edit({id:yaOrder.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="yaOrder.delete({id:yaOrder.id})"
+                                    class="btn btn-danger btn-sm">                                    
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

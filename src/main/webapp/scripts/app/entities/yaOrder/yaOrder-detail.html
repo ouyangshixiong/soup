@@ -1,0 +1,190 @@
+
+<div>
+    <h2><span>YaOrder</span> {{yaOrder.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span>OrderId</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaOrder.orderId}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>UseCoupon</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaOrder.useCoupon}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>OrderDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaOrder.orderDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>ProductAmount</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaOrder.productAmount}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>OrderTotalPrice</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaOrder.orderTotalPrice}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>OrderStatus</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'jhipsterLiquibaseBugApp.OrderStatus.' + yaOrder.orderStatus}}">{{yaOrder.orderStatus}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>OrderStatusChangeTime</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaOrder.orderStatusChangeTime}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>DeliveryDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaOrder.deliveryDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>DeliveryPeriod</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaOrder.deliveryPeriod}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>DeliveryManName</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaOrder.deliveryManName}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>DeliveryPhone</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaOrder.deliveryPhone}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>PotReturnMethod</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'jhipsterLiquibaseBugApp.PotReturnMethod.' + yaOrder.potReturnMethod}}">{{yaOrder.potReturnMethod}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>HasPrivatePot</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaOrder.hasPrivatePot}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>UsePrivatePot</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaOrder.usePrivatePot}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>ParentOrderId</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaOrder.parentOrderId}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>IsParentOrder</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaOrder.isParentOrder}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>OrderRealPrice</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaOrder.orderRealPrice}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>yauser</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="yaUser.detail({id:yaOrder.yauser.id})">{{yaOrder.yauser.id}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>YaAddress</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="yaAddress.detail({id:yaOrder.yaAddress.id})">{{yaOrder.yaAddress.id}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>YaCouponOrder</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="yaCouponOrder.detail({id:yaOrder.yaCouponOrder.id})">{{yaOrder.yaCouponOrder.id}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>yaproduct</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="yaProduct.detail({id:yaOrder.yaproduct.id})">{{yaOrder.yaproduct.id}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>

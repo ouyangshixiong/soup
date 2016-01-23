@@ -1,0 +1,41 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "yaproduct",
+      "otherEntityName": "yaProduct",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "yacoupon",
+      "otherEntityName": "yaCoupon",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "bannerPictures",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "bannerName",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "updateDate",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "changelogDate": "20160123095151",
+  "dto": "no",
+  "pagination": "no"
+}

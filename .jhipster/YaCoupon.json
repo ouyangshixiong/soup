@@ -1,0 +1,107 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "yaCouponOrder",
+      "otherEntityName": "yaCouponOrder",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "yacoupon"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "yaBanner",
+      "otherEntityName": "yaBanner",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "yacoupon"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "couponName",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "minlength",
+        "maxlength"
+      ],
+      "fieldValidateRulesMinlength": 6,
+      "fieldValidateRulesMaxlength": 40
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "couponType",
+      "fieldType": "CouponType",
+      "fieldValues": "DISCOUNT,FREEONE",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "couponPictures",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "price",
+      "fieldType": "Float"
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "keywords",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 6,
+      "fieldName": "couponDiscription",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 7,
+      "fieldName": "couponAmount",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 8,
+      "fieldName": "couponInventory",
+      "javadoc": "库存",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 9,
+      "fieldName": "onShelveDate",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 10,
+      "fieldName": "offShelveDate",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 11,
+      "fieldName": "couponStatus",
+      "javadoc": "可用或者不可用",
+      "fieldType": "Boolean"
+    }
+  ],
+  "changelogDate": "20160123095151",
+  "dto": "no",
+  "pagination": "no",
+  "javadoc": "优惠券"
+}

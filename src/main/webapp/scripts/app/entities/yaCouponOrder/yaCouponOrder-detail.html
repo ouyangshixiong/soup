@@ -1,0 +1,110 @@
+
+<div>
+    <h2><span>YaCouponOrder</span> {{yaCouponOrder.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span>CouponOrderId</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaCouponOrder.couponOrderId}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>CouponOrderDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaCouponOrder.couponOrderDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>CouponExpireDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaCouponOrder.couponExpireDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>CouponNeedPay</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaCouponOrder.couponNeedPay}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>CouponOrderPrice</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaCouponOrder.couponOrderPrice}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>CouponOrderStatus</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'jhipsterLiquibaseBugApp.CouponOrderStatus.' + yaCouponOrder.couponOrderStatus}}">{{yaCouponOrder.couponOrderStatus}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>OrderStatusChangeTime</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaCouponOrder.orderStatusChangeTime}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>ParentcouponOrderId</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaCouponOrder.parentcouponOrderId}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>IsParentCouponOrder</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaCouponOrder.isParentCouponOrder}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>yauser</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="yaUser.detail({id:yaCouponOrder.yauser.id})">{{yaCouponOrder.yauser.id}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>yacoupon</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="yaCoupon.detail({id:yaCouponOrder.yacoupon.id})">{{yaCouponOrder.yacoupon.id}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>

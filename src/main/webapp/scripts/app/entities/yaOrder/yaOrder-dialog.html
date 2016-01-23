@@ -1,0 +1,208 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myYaOrderLabel">Create or edit a YaOrder</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="yaOrder.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_orderId">OrderId</label>
+            <input type="text" class="form-control" name="orderId" id="field_orderId"
+                    ng-model="yaOrder.orderId"
+                    required />
+            <div ng-show="editForm.orderId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.orderId.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_useCoupon">UseCoupon</label>
+            <input type="checkbox" class="form-control" name="useCoupon" id="field_useCoupon"
+                    ng-model="yaOrder.useCoupon"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_orderDate">OrderDate</label>
+            <input id="field_orderDate" type="text" class="form-control" uib-datepicker-popup="{{dateformat}}" ng-model="yaOrder.orderDate" is-open="datePickerForOrderDate.status.opened"
+            />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="datePickerForOrderDateOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_productAmount">ProductAmount</label>
+            <input type="number" class="form-control" name="productAmount" id="field_productAmount"
+                    ng-model="yaOrder.productAmount"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_orderTotalPrice">OrderTotalPrice</label>
+            <input type="number" class="form-control" name="orderTotalPrice" id="field_orderTotalPrice"
+                    ng-model="yaOrder.orderTotalPrice"
+                    required />
+            <div ng-show="editForm.orderTotalPrice.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.orderTotalPrice.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.orderTotalPrice.$error.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_orderStatus">OrderStatus</label>
+            <select class="form-control" name="orderStatus" ng-model="yaOrder.orderStatus" id="field_orderStatus" required>
+                <option value="ACTIVE">ACTIVE</option>
+                <option value="DISCARD">DISCARD</option>
+                <option value="PAID">PAID</option>
+                <option value="EXPIRED">EXPIRED</option>
+            </select>
+            <div ng-show="editForm.orderStatus.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.orderStatus.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_orderStatusChangeTime">OrderStatusChangeTime</label>
+            <input type="number" class="form-control" name="orderStatusChangeTime" id="field_orderStatusChangeTime"
+                    ng-model="yaOrder.orderStatusChangeTime"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_deliveryDate">DeliveryDate</label>
+            <input id="field_deliveryDate" type="text" class="form-control" uib-datepicker-popup="{{dateformat}}" ng-model="yaOrder.deliveryDate" is-open="datePickerForDeliveryDate.status.opened"
+            />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="datePickerForDeliveryDateOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_deliveryPeriod">DeliveryPeriod</label>
+            <input type="text" class="form-control" name="deliveryPeriod" id="field_deliveryPeriod"
+                    ng-model="yaOrder.deliveryPeriod"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_deliveryManName">DeliveryManName</label>
+            <input type="text" class="form-control" name="deliveryManName" id="field_deliveryManName"
+                    ng-model="yaOrder.deliveryManName"
+                    ng-minlength="2" ng-maxlength="20" />
+            <div ng-show="editForm.deliveryManName.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.deliveryManName.$error.minlength" translate-value-min="2">
+                    This field is required to be at least 2 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.deliveryManName.$error.maxlength" translate-value-max="20">
+                    This field cannot be longer than 20 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_deliveryPhone">DeliveryPhone</label>
+            <input type="text" class="form-control" name="deliveryPhone" id="field_deliveryPhone"
+                    ng-model="yaOrder.deliveryPhone"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_potReturnMethod">PotReturnMethod</label>
+            <select class="form-control" name="potReturnMethod" ng-model="yaOrder.potReturnMethod" id="field_potReturnMethod">
+                <option value="SELF">SELF</option>
+                <option value="DELIVERYMAN">DELIVERYMAN</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_hasPrivatePot">HasPrivatePot</label>
+            <input type="checkbox" class="form-control" name="hasPrivatePot" id="field_hasPrivatePot"
+                    ng-model="yaOrder.hasPrivatePot"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_usePrivatePot">UsePrivatePot</label>
+            <input type="checkbox" class="form-control" name="usePrivatePot" id="field_usePrivatePot"
+                    ng-model="yaOrder.usePrivatePot"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_parentOrderId">ParentOrderId</label>
+            <input type="text" class="form-control" name="parentOrderId" id="field_parentOrderId"
+                    ng-model="yaOrder.parentOrderId"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_isParentOrder">IsParentOrder</label>
+            <input type="checkbox" class="form-control" name="isParentOrder" id="field_isParentOrder"
+                    ng-model="yaOrder.isParentOrder"
+                     />
+            <div ng-show="editForm.isParentOrder.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.isParentOrder.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_orderRealPrice">OrderRealPrice</label>
+            <input type="number" class="form-control" name="orderRealPrice" id="field_orderRealPrice"
+                    ng-model="yaOrder.orderRealPrice"
+                    required />
+            <div ng-show="editForm.orderRealPrice.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.orderRealPrice.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.orderRealPrice.$error.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="field_yauser">yauser</label>
+            <select class="form-control" id="field_yauser" name="yauser" ng-model="yaOrder.yauser" ng-options="yaUser as yaUser.id for yaUser in yausers track by yaUser.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_YaAddress">YaAddress</label>
+            <select class="form-control" id="field_YaAddress" name="YaAddress" ng-model="yaOrder.yaAddress" ng-options="yaAddress as yaAddress.id for yaAddress in yaaddresss | orderBy:'id' track by yaAddress.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_YaCouponOrder">YaCouponOrder</label>
+            <select class="form-control" id="field_YaCouponOrder" name="YaCouponOrder" ng-model="yaOrder.yaCouponOrder" ng-options="yaCouponOrder as yaCouponOrder.id for yaCouponOrder in yacouponorders | orderBy:'id' track by yaCouponOrder.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_yaproduct">yaproduct</label>
+            <select class="form-control" id="field_yaproduct" name="yaproduct" ng-model="yaOrder.yaproduct" ng-options="yaProduct as yaProduct.id for yaProduct in yaproducts track by yaProduct.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

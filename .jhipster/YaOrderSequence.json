@@ -1,0 +1,8 @@
+{
+  "relationships": [],
+  "fields": [],
+  "changelogDate": "20160123095151",
+  "dto": "no",
+  "pagination": "no",
+  "javadoc": "订单号全局唯一生成表应对将来数据分库分表的问题"
+}

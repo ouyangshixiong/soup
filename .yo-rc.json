@@ -1,0 +1,24 @@
+{
+  "generator-jhipster": {
+    "baseName": "jhipster_liquibase_bug",
+    "packageName": "com.youai",
+    "packageFolder": "com/youai",
+    "authenticationType": "session",
+    "hibernateCache": "ehcache",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "no",
+    "useSass": false,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "enableTranslation": false,
+    "enableSocialSignIn": false,
+    "rememberMeKey": "1fcc8211c2189d1ad009fa147d86e8ea38c041b8",
+    "testFrameworks": [
+      "gatling"
+    ]
+  }
+}

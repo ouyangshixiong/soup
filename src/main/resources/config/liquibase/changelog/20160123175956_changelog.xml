@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+   <changeSet author="ouyang (generated)" id="1453543216469-1">
+      <createTable tableName="jhi_authority">
+         <column name="name" type="VARCHAR(50)">
+            <constraints nullable="false"/>
+         </column>
+      </createTable>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-2">
+      <createTable tableName="jhi_persistent_audit_event">
+         <column autoIncrement="true" name="event_id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="jhi_persistent_audit_eventPK"/>
+         </column>
+         <column name="event_date" type="timestamp"/>
+         <column name="event_type" type="VARCHAR(255)"/>
+         <column name="principal" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+      </createTable>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-3">
+      <createTable tableName="jhi_persistent_audit_evt_data">
+         <column name="event_id" type="BIGINT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="value" type="VARCHAR(255)"/>
+         <column name="name" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+      </createTable>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-4">
+      <createTable tableName="jhi_persistent_token">
+         <column name="series" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="ip_address" type="VARCHAR(39)"/>
+         <column name="token_date" type="date"/>
+         <column name="token_value" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="user_agent" type="VARCHAR(255)"/>
+         <column name="user_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-5">
+      <createTable tableName="jhi_user">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="jhi_userPK"/>
+         </column>
+         <column name="created_by" type="VARCHAR(50)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="created_date" type="timestamp">
+            <constraints nullable="false"/>
+         </column>
+         <column name="last_modified_by" type="VARCHAR(50)"/>
+         <column name="last_modified_date" type="timestamp"/>
+         <column name="activated" type="BOOLEAN">
+            <constraints nullable="false"/>
+         </column>
+         <column name="activation_key" type="VARCHAR(20)"/>
+         <column name="email" type="VARCHAR(100)"/>
+         <column name="first_name" type="VARCHAR(50)"/>
+         <column name="lang_key" type="VARCHAR(5)"/>
+         <column name="last_name" type="VARCHAR(50)"/>
+         <column name="login" type="VARCHAR(50)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="password_hash" type="VARCHAR(60)"/>
+         <column name="reset_date" type="timestamp"/>
+         <column name="reset_key" type="VARCHAR(20)"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-6">
+      <createTable tableName="jhi_user_authority">
+         <column name="user_id" type="BIGINT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="authority_name" type="VARCHAR(50)">
+            <constraints nullable="false"/>
+         </column>
+      </createTable>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-7">
+      <createTable tableName="ya_address">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="ya_addressPK"/>
+         </column>
+         <column name="is_default" type="BOOLEAN">
+            <constraints nullable="false"/>
+         </column>
+         <column name="receiver_building" type="VARCHAR(255)"/>
+         <column name="receiver_company" type="VARCHAR(255)"/>
+         <column name="receiver_district" type="VARCHAR(255)"/>
+         <column name="receiver_floor" type="VARCHAR(255)"/>
+         <column name="receiver_mobile" type="VARCHAR(255)"/>
+         <column name="receiver_name" type="VARCHAR(20)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="yauser_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-8">
+      <createTable tableName="ya_banner">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="ya_bannerPK"/>
+         </column>
+         <column name="banner_name" type="VARCHAR(255)"/>
+         <column name="banner_pictures" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="update_date" type="date"/>
+         <column name="yacoupon_id" type="BIGINT"/>
+         <column name="yaproduct_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-9">
+      <createTable tableName="ya_building">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="ya_buildingPK"/>
+         </column>
+         <column name="building_code" type="INT"/>
+         <column name="building_name" type="VARCHAR(255)"/>
+         <column name="ya_district_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-10">
+      <createTable tableName="ya_coupon">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="ya_couponPK"/>
+         </column>
+         <column name="coupon_amount" type="INT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="coupon_discription" type="VARCHAR(255)"/>
+         <column name="coupon_inventory" type="INT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="coupon_name" type="VARCHAR(40)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="coupon_pictures" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="coupon_status" type="BOOLEAN"/>
+         <column name="coupon_type" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="keywords" type="VARCHAR(255)"/>
+         <column name="off_shelve_date" type="date">
+            <constraints nullable="false"/>
+         </column>
+         <column name="on_shelve_date" type="date">
+            <constraints nullable="false"/>
+         </column>
+         <column name="price" type="FLOAT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-11">
+      <createTable tableName="ya_coupon_order">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="ya_coupon_orderPK"/>
+         </column>
+         <column name="coupon_expire_date" type="date"/>
+         <column name="coupon_need_pay" type="BOOLEAN">
+            <constraints nullable="false"/>
+         </column>
+         <column name="coupon_order_date" type="date"/>
+         <column name="coupon_order_id" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="coupon_order_price" type="FLOAT"/>
+         <column name="coupon_order_status" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="is_parent_coupon_order" type="BOOLEAN">
+            <constraints nullable="false"/>
+         </column>
+         <column name="order_status_change_time" type="BIGINT"/>
+         <column name="parentcoupon_order_id" type="VARCHAR(255)"/>
+         <column name="yacoupon_id" type="BIGINT"/>
+         <column name="yauser_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-12">
+      <createTable tableName="ya_district">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="ya_districtPK"/>
+         </column>
+         <column name="district_code" type="INT"/>
+         <column name="district_name" type="VARCHAR(255)"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-13">
+      <createTable tableName="ya_order">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="ya_orderPK"/>
+         </column>
+         <column name="delivery_date" type="date"/>
+         <column name="delivery_man_name" type="VARCHAR(20)"/>
+         <column name="delivery_period" type="VARCHAR(255)"/>
+         <column name="delivery_phone" type="VARCHAR(255)"/>
+         <column name="has_private_pot" type="BOOLEAN"/>
+         <column name="is_parent_order" type="BOOLEAN">
+            <constraints nullable="false"/>
+         </column>
+         <column name="order_date" type="date"/>
+         <column name="order_id" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="order_real_price" type="FLOAT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="order_status" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="order_status_change_time" type="BIGINT"/>
+         <column name="order_total_price" type="FLOAT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="parent_order_id" type="VARCHAR(255)"/>
+         <column name="pot_return_method" type="VARCHAR(255)"/>
+         <column name="product_amount" type="INT"/>
+         <column name="use_coupon" type="BOOLEAN"/>
+         <column name="use_private_pot" type="BOOLEAN"/>
+         <column name="yaAddress_id" type="BIGINT"/>
+         <column name="yaCouponOrder_id" type="BIGINT"/>
+         <column name="yaproduct_id" type="BIGINT"/>
+         <column name="yauser_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-14">
+      <createTable tableName="ya_order_sequence">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="ya_order_sequencePK"/>
+         </column>
+      </createTable>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-15">
+      <createTable tableName="ya_pot">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="ya_potPK"/>
+         </column>
+         <column name="is_private_pot" type="BOOLEAN">
+            <constraints nullable="false"/>
+         </column>
+         <column name="pot_buy_date" type="date"/>
+         <column name="pot_capacity" type="INT"/>
+         <column name="pot_color" type="VARCHAR(255)"/>
+         <column name="pot_label" type="VARCHAR(20)"/>
+         <column name="pot_qrcode" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="pot_status" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="yaorder_id" type="BIGINT"/>
+         <column name="yauser_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-16">
+      <createTable tableName="ya_product">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="ya_productPK"/>
+         </column>
+         <column name="discount_price" type="FLOAT"/>
+         <column name="is_serial" type="BOOLEAN"/>
+         <column name="keywords" type="VARCHAR(255)"/>
+         <column name="membership_price" type="FLOAT"/>
+         <column name="off_shelve_date" type="date">
+            <constraints nullable="false"/>
+         </column>
+         <column name="on_shelve_date" type="date">
+            <constraints nullable="false"/>
+         </column>
+         <column name="orginal_price" type="FLOAT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="product_amount" type="INT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="product_discription" type="VARCHAR(255)"/>
+         <column name="product_inventory" type="INT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="product_name" type="VARCHAR(40)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="product_pictures" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="product_status" type="BOOLEAN"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-17">
+      <createTable tableName="ya_question">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="ya_questionPK"/>
+         </column>
+         <column name="priority" type="INT"/>
+         <column name="status" type="VARCHAR(255)"/>
+         <column name="ya_a" type="VARCHAR(255)"/>
+         <column name="ya_q" type="VARCHAR(300)">
+            <constraints nullable="false"/>
+         </column>
+      </createTable>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-18">
+      <createTable tableName="ya_sub_product">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="ya_sub_productPK"/>
+         </column>
+         <column name="capacity" type="VARCHAR(255)"/>
+         <column name="price" type="FLOAT"/>
+         <column name="serial_product_id" type="BIGINT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="ya_product_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-19">
+      <createTable tableName="ya_user">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="ya_userPK"/>
+         </column>
+         <column name="auth_token" type="VARCHAR(255)"/>
+         <column name="auth_token_update_time" type="date"/>
+         <column name="email" type="VARCHAR(255)"/>
+         <column name="facebook" type="VARCHAR(255)"/>
+         <column name="gender" type="VARCHAR(255)"/>
+         <column name="has_private_pot" type="BOOLEAN"/>
+         <column name="login_status" type="VARCHAR(255)"/>
+         <column name="mobile_number" type="VARCHAR(255)"/>
+         <column name="name" type="VARCHAR(20)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="password" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="sm_expire_time" type="date"/>
+         <column name="sm_last_check_date" type="date"/>
+         <column name="sm_last_content" type="VARCHAR(255)"/>
+         <column name="sm_used_count" type="INT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-20">
+      <addPrimaryKey columnNames="event_id, name" tableName="jhi_persistent_audit_evt_data"/>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-21">
+      <addPrimaryKey columnNames="user_id, authority_name" tableName="jhi_user_authority"/>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-22">
+      <addPrimaryKey columnNames="name"
+                     constraintName="jhi_authorityPK"
+                     tableName="jhi_authority"/>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-23">
+      <addPrimaryKey columnNames="series"
+                     constraintName="jhi_persistent_tokenPK"
+                     tableName="jhi_persistent_token"/>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-24">
+      <addUniqueConstraint columnNames="email"
+                           constraintName="UC_JHI_USEREMAIL_COL"
+                           tableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-25">
+      <addUniqueConstraint columnNames="login"
+                           constraintName="UC_JHI_USERLOGIN_COL"
+                           tableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-26">
+      <addForeignKeyConstraint baseColumnNames="yauser_id"
+                               baseTableName="ya_address"
+                               constraintName="FK_axa0uwraehchxlplcry3p0xur"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="ya_user"/>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-27">
+      <addForeignKeyConstraint baseColumnNames="user_id"
+                               baseTableName="jhi_persistent_token"
+                               constraintName="FK_c2yetr6vr7nrqhjvi1rl24b3l"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-28">
+      <addForeignKeyConstraint baseColumnNames="yaorder_id"
+                               baseTableName="ya_pot"
+                               constraintName="FK_d4omvxycyrmv0t4jox349w7ck"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="ya_order"/>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-29">
+      <addForeignKeyConstraint baseColumnNames="yaCouponOrder_id"
+                               baseTableName="ya_order"
+                               constraintName="FK_djem5indspi58ortih59yxnda"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="ya_coupon_order"/>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-30">
+      <addForeignKeyConstraint baseColumnNames="yaproduct_id"
+                               baseTableName="ya_order"
+                               constraintName="FK_eua0pgr89rss1i4dko3pvypd1"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="ya_product"/>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-31">
+      <addForeignKeyConstraint baseColumnNames="event_id"
+                               baseTableName="jhi_persistent_audit_evt_data"
+                               constraintName="FK_evb970jo5bi8aon8s65c0lyyn"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="event_id"
+                               referencedTableName="jhi_persistent_audit_event"/>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-32">
+      <addForeignKeyConstraint baseColumnNames="yauser_id"
+                               baseTableName="ya_coupon_order"
+                               constraintName="FK_higfy4u93gqn74qjfbkn50qf4"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="ya_user"/>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-33">
+      <addForeignKeyConstraint baseColumnNames="yaproduct_id"
+                               baseTableName="ya_banner"
+                               constraintName="FK_hw1hqyk8f3244eis94g949m17"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="ya_product"/>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-34">
+      <addForeignKeyConstraint baseColumnNames="authority_name"
+                               baseTableName="jhi_user_authority"
+                               constraintName="FK_ik5r332jlvpolfr7e5n7oi42l"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="name"
+                               referencedTableName="jhi_authority"/>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-35">
+      <addForeignKeyConstraint baseColumnNames="yaAddress_id"
+                               baseTableName="ya_order"
+                               constraintName="FK_ixbwnijl1q2vue26dk2dptxcp"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="ya_address"/>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-36">
+      <addForeignKeyConstraint baseColumnNames="ya_district_id"
+                               baseTableName="ya_building"
+                               constraintName="FK_kfr9uglpechm2inc5mi7jrin9"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="ya_district"/>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-37">
+      <addForeignKeyConstraint baseColumnNames="yauser_id"
+                               baseTableName="ya_pot"
+                               constraintName="FK_kju0y6rofr5w3la7sloik60pq"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="ya_user"/>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-38">
+      <addForeignKeyConstraint baseColumnNames="yacoupon_id"
+                               baseTableName="ya_banner"
+                               constraintName="FK_l5fxau1dwnwjiuex9r228g0mm"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="ya_coupon"/>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-39">
+      <addForeignKeyConstraint baseColumnNames="yacoupon_id"
+                               baseTableName="ya_coupon_order"
+                               constraintName="FK_le5xxvm0qflydpn8iowmx6eu4"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="ya_coupon"/>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-40">
+      <addForeignKeyConstraint baseColumnNames="yauser_id"
+                               baseTableName="ya_order"
+                               constraintName="FK_o2ykaf3g9dg1m6px2x9a03cw9"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="ya_user"/>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-41">
+      <addForeignKeyConstraint baseColumnNames="user_id"
+                               baseTableName="jhi_user_authority"
+                               constraintName="FK_pg0oaw6mr9pt3ibeihdc1jwof"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="ouyang (generated)" id="1453543216469-42">
+      <addForeignKeyConstraint baseColumnNames="ya_product_id"
+                               baseTableName="ya_sub_product"
+                               constraintName="FK_py1eq2cwe4wiqarda36pf1tih"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="ya_product"/>
+   </changeSet>
+</databaseChangeLog>

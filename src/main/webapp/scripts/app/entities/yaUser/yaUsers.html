@@ -1,0 +1,82 @@
+<div>
+    <h2>YaUsers</h2>
+    <jh-alert></jh-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="yaUser.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span 
+                       >Create new YaUser
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Name</span></th>
+                    <th><span>MobileNumber</span></th>
+                    <th><span>Facebook</span></th>
+                    <th><span>Email</span></th>
+                    <th><span>Password</span></th>
+                    <th><span>Gender</span></th>
+                    <th><span>LoginStatus</span></th>
+                    <th><span>HasPrivatePot</span></th>
+                    <th><span>AuthToken</span></th>
+                    <th><span>AuthTokenUpdateTime</span></th>
+                    <th><span>SmUsedCount</span></th>
+                    <th><span>SmLastCheckDate</span></th>
+                    <th><span>SmLastContent</span></th>
+                    <th><span>SmExpireTime</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="yaUser in yaUsers track by yaUser.id">
+                    <td><a ui-sref="yaUser.detail({id:yaUser.id})">{{yaUser.id}}</a></td>
+                    <td>{{yaUser.name}}</td>
+                    <td>{{yaUser.mobileNumber}}</td>
+                    <td>{{yaUser.facebook}}</td>
+                    <td>{{yaUser.email}}</td>
+                    <td>{{yaUser.password}}</td>
+                    <td translate="{{'jhipsterLiquibaseBugApp.Gender.' + yaUser.gender}}">{{yaUser.gender}}</td>
+                    <td translate="{{'jhipsterLiquibaseBugApp.LoginStatus.' + yaUser.loginStatus}}">{{yaUser.loginStatus}}</td>
+                    <td>{{yaUser.hasPrivatePot}}</td>
+                    <td>{{yaUser.authToken}}</td>
+                        <td>{{yaUser.authTokenUpdateTime | date:'mediumDate'}}</td>
+                    <td>{{yaUser.smUsedCount}}</td>
+                        <td>{{yaUser.smLastCheckDate | date:'mediumDate'}}</td>
+                    <td>{{yaUser.smLastContent}}</td>
+                        <td>{{yaUser.smExpireTime | date:'mediumDate'}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="yaUser.detail({id:yaUser.id})"
+                                    class="btn btn-info btn-sm"> 
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="yaUser.edit({id:yaUser.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="yaUser.delete({id:yaUser.id})"
+                                    class="btn btn-danger btn-sm">                                    
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

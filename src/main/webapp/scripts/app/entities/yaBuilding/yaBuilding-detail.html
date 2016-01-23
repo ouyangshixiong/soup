@@ -1,0 +1,46 @@
+
+<div>
+    <h2><span>YaBuilding</span> {{yaBuilding.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span>BuildingCode</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaBuilding.buildingCode}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>BuildingName</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaBuilding.buildingName}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>yaDistrict</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="yaDistrict.detail({id:yaBuilding.yaDistrict.id})">{{yaBuilding.yaDistrict.id}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>

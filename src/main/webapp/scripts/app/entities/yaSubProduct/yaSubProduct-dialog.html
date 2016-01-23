@@ -1,0 +1,60 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myYaSubProductLabel">Create or edit a YaSubProduct</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="yaSubProduct.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_serialProductId">SerialProductId</label>
+            <input type="number" class="form-control" name="serialProductId" id="field_serialProductId"
+                    ng-model="yaSubProduct.serialProductId"
+                    required />
+            <div ng-show="editForm.serialProductId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.serialProductId.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.serialProductId.$error.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_capacity">Capacity</label>
+            <input type="text" class="form-control" name="capacity" id="field_capacity"
+                    ng-model="yaSubProduct.capacity"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_price">Price</label>
+            <input type="number" class="form-control" name="price" id="field_price"
+                    ng-model="yaSubProduct.price"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label for="field_yaProduct">yaProduct</label>
+            <select class="form-control" id="field_yaProduct" name="yaProduct" ng-model="yaSubProduct.yaProduct" ng-options="yaProduct as yaProduct.id for yaProduct in yaproducts track by yaProduct.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

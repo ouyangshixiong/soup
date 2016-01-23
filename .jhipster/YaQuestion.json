@@ -1,0 +1,35 @@
+{
+  "relationships": [],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "yaQ",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "minlength",
+        "maxlength"
+      ],
+      "fieldValidateRulesMinlength": 6,
+      "fieldValidateRulesMaxlength": 300
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "yaA",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "priority",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "status",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20160123095151",
+  "dto": "no",
+  "pagination": "no"
+}

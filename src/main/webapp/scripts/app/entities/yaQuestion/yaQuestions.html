@@ -1,0 +1,62 @@
+<div>
+    <h2>YaQuestions</h2>
+    <jh-alert></jh-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="yaQuestion.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span 
+                       >Create new YaQuestion
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>YaQ</span></th>
+                    <th><span>YaA</span></th>
+                    <th><span>Priority</span></th>
+                    <th><span>Status</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="yaQuestion in yaQuestions track by yaQuestion.id">
+                    <td><a ui-sref="yaQuestion.detail({id:yaQuestion.id})">{{yaQuestion.id}}</a></td>
+                    <td>{{yaQuestion.yaQ}}</td>
+                    <td>{{yaQuestion.yaA}}</td>
+                    <td>{{yaQuestion.priority}}</td>
+                    <td>{{yaQuestion.status}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="yaQuestion.detail({id:yaQuestion.id})"
+                                    class="btn btn-info btn-sm"> 
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="yaQuestion.edit({id:yaQuestion.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="yaQuestion.delete({id:yaQuestion.id})"
+                                    class="btn btn-danger btn-sm">                                    
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,123 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "yaOrder",
+      "otherEntityName": "yaOrder",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "yaproduct"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "yaSubProduct",
+      "otherEntityName": "yaSubProduct",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "yaProduct"
+    },
+    {
+      "relationshipId": 3,
+      "relationshipName": "yaBanner",
+      "otherEntityName": "yaBanner",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "yaproduct"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "productName",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "minlength",
+        "maxlength"
+      ],
+      "fieldValidateRulesMinlength": 6,
+      "fieldValidateRulesMaxlength": 40
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "productPictures",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "orginalPrice",
+      "fieldType": "Float",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "discountPrice",
+      "fieldType": "Float"
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "membershipPrice",
+      "fieldType": "Float"
+    },
+    {
+      "fieldId": 6,
+      "fieldName": "isSerial",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldId": 7,
+      "fieldName": "keywords",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 8,
+      "fieldName": "productDiscription",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 9,
+      "fieldName": "productAmount",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 10,
+      "fieldName": "productInventory",
+      "javadoc": "库存",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 11,
+      "fieldName": "onShelveDate",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 12,
+      "fieldName": "offShelveDate",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 13,
+      "fieldName": "productStatus",
+      "javadoc": "可用或者不可用",
+      "fieldType": "Boolean"
+    }
+  ],
+  "changelogDate": "20160123095151",
+  "dto": "no",
+  "pagination": "no",
+  "javadoc": "商品"
+}

@@ -1,0 +1,68 @@
+<div>
+    <h2>YaBanners</h2>
+    <jh-alert></jh-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="yaBanner.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span 
+                       >Create new YaBanner
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>BannerPictures</span></th>
+                    <th><span>BannerName</span></th>
+                    <th><span>UpdateDate</span></th>
+                    <th><span>yaproduct</span></th>
+                    <th><span>yacoupon</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="yaBanner in yaBanners track by yaBanner.id">
+                    <td><a ui-sref="yaBanner.detail({id:yaBanner.id})">{{yaBanner.id}}</a></td>
+                    <td>{{yaBanner.bannerPictures}}</td>
+                    <td>{{yaBanner.bannerName}}</td>
+                        <td>{{yaBanner.updateDate | date:'mediumDate'}}</td>
+                    <td>
+                        <a ui-sref="yaProduct.detail({id:yaBanner.yaproduct.id})">{{yaBanner.yaproduct.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="yaCoupon.detail({id:yaBanner.yacoupon.id})">{{yaBanner.yacoupon.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="yaBanner.detail({id:yaBanner.id})"
+                                    class="btn btn-info btn-sm"> 
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="yaBanner.edit({id:yaBanner.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="yaBanner.delete({id:yaBanner.id})"
+                                    class="btn btn-danger btn-sm">                                    
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

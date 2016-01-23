@@ -1,0 +1,94 @@
+
+<div>
+    <h2><span>YaPot</span> {{yaPot.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span>IsPrivatePot</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaPot.isPrivatePot}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>PotQrcode</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaPot.potQrcode}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>PotLabel</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaPot.potLabel}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>PotStatus</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'jhipsterLiquibaseBugApp.PotStatus.' + yaPot.potStatus}}">{{yaPot.potStatus}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>PotColor</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaPot.potColor}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>PotCapacity</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaPot.potCapacity}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>PotBuyDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaPot.potBuyDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>yauser</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="yaUser.detail({id:yaPot.yauser.id})">{{yaPot.yauser.id}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>yaorder</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="yaOrder.detail({id:yaPot.yaorder.id})">{{yaPot.yaorder.id}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>

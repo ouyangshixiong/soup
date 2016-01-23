@@ -1,0 +1,126 @@
+
+<div>
+    <h2><span>YaProduct</span> {{yaProduct.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span>ProductName</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaProduct.productName}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>ProductPictures</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaProduct.productPictures}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>OrginalPrice</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaProduct.orginalPrice}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>DiscountPrice</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaProduct.discountPrice}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>MembershipPrice</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaProduct.membershipPrice}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>IsSerial</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaProduct.isSerial}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Keywords</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaProduct.keywords}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>ProductDiscription</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaProduct.productDiscription}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>ProductAmount</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaProduct.productAmount}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>ProductInventory</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaProduct.productInventory}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>OnShelveDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaProduct.onShelveDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>OffShelveDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaProduct.offShelveDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>ProductStatus</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaProduct.productStatus}}</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>

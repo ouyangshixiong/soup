@@ -1,0 +1,72 @@
+<div>
+    <h2>YaAddresss</h2>
+    <jh-alert></jh-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="yaAddress.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span 
+                       >Create new YaAddress
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>ReceiverName</span></th>
+                    <th><span>ReceiverMobile</span></th>
+                    <th><span>ReceiverDistrict</span></th>
+                    <th><span>ReceiverBuilding</span></th>
+                    <th><span>ReceiverFloor</span></th>
+                    <th><span>ReceiverCompany</span></th>
+                    <th><span>IsDefault</span></th>
+                    <th><span>yauser</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="yaAddress in yaAddresss track by yaAddress.id">
+                    <td><a ui-sref="yaAddress.detail({id:yaAddress.id})">{{yaAddress.id}}</a></td>
+                    <td>{{yaAddress.receiverName}}</td>
+                    <td>{{yaAddress.receiverMobile}}</td>
+                    <td>{{yaAddress.receiverDistrict}}</td>
+                    <td>{{yaAddress.receiverBuilding}}</td>
+                    <td>{{yaAddress.receiverFloor}}</td>
+                    <td>{{yaAddress.receiverCompany}}</td>
+                    <td>{{yaAddress.isDefault}}</td>
+                    <td>
+                        <a ui-sref="yaUser.detail({id:yaAddress.yauser.id})">{{yaAddress.yauser.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="yaAddress.detail({id:yaAddress.id})"
+                                    class="btn btn-info btn-sm"> 
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="yaAddress.edit({id:yaAddress.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="yaAddress.delete({id:yaAddress.id})"
+                                    class="btn btn-danger btn-sm">                                    
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

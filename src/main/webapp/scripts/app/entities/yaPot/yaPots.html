@@ -1,0 +1,76 @@
+<div>
+    <h2>YaPots</h2>
+    <jh-alert></jh-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="yaPot.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span 
+                       >Create new YaPot
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>IsPrivatePot</span></th>
+                    <th><span>PotQrcode</span></th>
+                    <th><span>PotLabel</span></th>
+                    <th><span>PotStatus</span></th>
+                    <th><span>PotColor</span></th>
+                    <th><span>PotCapacity</span></th>
+                    <th><span>PotBuyDate</span></th>
+                    <th><span>yauser</span></th>
+                    <th><span>yaorder</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="yaPot in yaPots track by yaPot.id">
+                    <td><a ui-sref="yaPot.detail({id:yaPot.id})">{{yaPot.id}}</a></td>
+                    <td>{{yaPot.isPrivatePot}}</td>
+                    <td>{{yaPot.potQrcode}}</td>
+                    <td>{{yaPot.potLabel}}</td>
+                    <td translate="{{'jhipsterLiquibaseBugApp.PotStatus.' + yaPot.potStatus}}">{{yaPot.potStatus}}</td>
+                    <td>{{yaPot.potColor}}</td>
+                    <td>{{yaPot.potCapacity}}</td>
+                        <td>{{yaPot.potBuyDate | date:'mediumDate'}}</td>
+                    <td>
+                        <a ui-sref="yaUser.detail({id:yaPot.yauser.id})">{{yaPot.yauser.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="yaOrder.detail({id:yaPot.yaorder.id})">{{yaPot.yaorder.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="yaPot.detail({id:yaPot.id})"
+                                    class="btn btn-info btn-sm"> 
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="yaPot.edit({id:yaPot.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="yaPot.delete({id:yaPot.id})"
+                                    class="btn btn-danger btn-sm">                                    
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

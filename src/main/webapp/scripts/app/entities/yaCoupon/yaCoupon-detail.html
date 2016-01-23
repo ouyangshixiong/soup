@@ -1,0 +1,110 @@
+
+<div>
+    <h2><span>YaCoupon</span> {{yaCoupon.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span>CouponName</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaCoupon.couponName}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>CouponType</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'jhipsterLiquibaseBugApp.CouponType.' + yaCoupon.couponType}}">{{yaCoupon.couponType}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>CouponPictures</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaCoupon.couponPictures}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Price</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaCoupon.price}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Keywords</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaCoupon.keywords}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>CouponDiscription</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaCoupon.couponDiscription}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>CouponAmount</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaCoupon.couponAmount}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>CouponInventory</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaCoupon.couponInventory}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>OnShelveDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaCoupon.onShelveDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>OffShelveDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaCoupon.offShelveDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>CouponStatus</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{yaCoupon.couponStatus}}</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>

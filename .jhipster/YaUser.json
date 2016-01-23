@@ -1,0 +1,121 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "yaPot",
+      "otherEntityName": "yaPot",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "yauser"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "yaOrder",
+      "otherEntityName": "yaOrder",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "yauser"
+    },
+    {
+      "relationshipId": 3,
+      "relationshipName": "yaCouponOrder",
+      "otherEntityName": "yaCouponOrder",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "yauser"
+    },
+    {
+      "relationshipId": 4,
+      "relationshipName": "yaAddress",
+      "otherEntityName": "yaAddress",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "yauser"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "minlength",
+        "maxlength"
+      ],
+      "fieldValidateRulesMinlength": 6,
+      "fieldValidateRulesMaxlength": 20
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "mobileNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "facebook",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "password",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 6,
+      "fieldName": "gender",
+      "fieldType": "Gender",
+      "fieldValues": "MALE,FEMALE"
+    },
+    {
+      "fieldId": 7,
+      "fieldName": "loginStatus",
+      "fieldType": "LoginStatus",
+      "fieldValues": "LOGINED,NOTLOGIN"
+    },
+    {
+      "fieldId": 8,
+      "fieldName": "hasPrivatePot",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldId": 9,
+      "fieldName": "authToken",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 10,
+      "fieldName": "authTokenUpdateTime",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldId": 11,
+      "fieldName": "smUsedCount",
+      "javadoc": "short message limit 相关",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldId": 12,
+      "fieldName": "smLastCheckDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldId": 13,
+      "fieldName": "smLastContent",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 14,
+      "fieldName": "smExpireTime",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "changelogDate": "20160123095151",
+  "dto": "no",
+  "pagination": "no",
+  "javadoc": "用户信息"
+}
